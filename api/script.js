@@ -29,6 +29,7 @@ fetch("https://swapi.dev/api/people/1/")
         output.innerHTML = `<h2>${data.name}</h2><p>${data.height}cm</p>`
         const homeworld = data.homeworld
 
+        //Zweiter fetch request ist vom ergebnis des ersten Abhängig:
         fetch(homeworld)
             .then(res => res.json())
             .then(planet => {
